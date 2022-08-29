@@ -1,7 +1,4 @@
-var rect = {
-    perimeter: (x,y) => (2*(x+y)),
-    area: (x,y) => (x*y)
-};
+var rect = require('./rectangle');
 
 function rectangle(length,width){
     console.log("Computing Area and Parameter for Rectangle with length: "+length+" and width: "+width);
