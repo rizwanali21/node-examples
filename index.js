@@ -1,16 +1,16 @@
 var rect = require('./rectangle');
 
-function rectangle(length,width){
+function rectangleCal(length,width){
     console.log("Computing Area and Parameter for Rectangle with length: "+length+" and width: "+width);
-    if(length>0 && width>0){
-        console.log("Area: "+rect.area(length,width));
-        console.log("Perimeter: "+rect.perimeter(length,width));
-    }
-    else{
-        console.log("Please enter valid dimensions");
-    }
+    rect(length,width,(err,rectangle)=>{
+        if(err)console.log("Error Occured: "+err.message);
+        else{
+            console.log("Area: "+rectangle.area());
+            console.log("Perimeter: "+rectangle.perimeter());
+        }
+    })
 }
 
-rectangle(5,6);
-rectangle(0,4);
-rectangle(4,-5);
+rectangleCal(5,6);
+rectangleCal(0,4);
+rectangleCal(4,-5);
